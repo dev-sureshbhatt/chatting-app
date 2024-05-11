@@ -9,6 +9,7 @@ router.post('/new', async (req,res,next)=>{
 
     try {
         
+        
         if (req.body.message){
 
             console.log("forwarding work to api")

@@ -24,13 +24,16 @@ export function connectChatAPI(message) {
         console.log("inside then")
         response.json()
                 .then(data => {
-                    if (data.choices[0].message.content){
-
+                  console.log(data)
+                  if (data.choices && data.choices.length > 0 && data.choices[0].message && data.choices[0].message.content)
+                   {
                         resolve(data.choices[0].message.content)
-
-                    } else reject("cannot retrieve message from API")
+                    } else if (data.error){
+                      reject(data.error)
+                    }
+                    else reject("cannot retrieve message from API")
                 })
-                .catch()
+                .catch(err => console.log(err))
     }
 
     )
