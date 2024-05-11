@@ -27,6 +27,7 @@ export function connectChatAPI(message) {
                   console.log(data)
                   if (data.choices && data.choices.length > 0 && data.choices[0].message && data.choices[0].message.content)
                    {
+                        
                         resolve(data.choices[0].message.content)
                     } else if (data.error){
                       reject(data.error)

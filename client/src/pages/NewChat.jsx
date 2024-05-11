@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
+import ProfileCard from '../components/ProfileCard'
 
 const NewChat = () => {
 
@@ -19,10 +20,13 @@ const NewChat = () => {
 
   return (
     <div>
+      <ProfileCard />
+    <div>
       <form  onSubmit={handleNewChat}>
         <input type='text' placeholder='type your message' onChange={(ev)=>setMessage(ev.target.value)} />
         <button>Send</button>
       </form>
+    </div>
     </div>
   )
 }

@@ -2,6 +2,7 @@ import './App.css'
 import {Route, Routes} from 'react-router-dom'
 import { BrowserRouter } from 'react-router-dom'
 import NewChat from './pages/NewChat'
+import ProfileCard from './components/ProfileCard'
 
 function App() {
   
@@ -10,6 +11,7 @@ function App() {
     <BrowserRouter>
     <Routes>
       <Route index element={< NewChat />} />
+      <Route path='/card' element={<ProfileCard />} />
     </Routes>
     </BrowserRouter>
 
